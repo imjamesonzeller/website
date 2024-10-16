@@ -1,0 +1,137 @@
+:root {
+    --bgc: #f5f5f5;
+    --text-color: #414042;
+    --link-color: #3aafa9;
+    --accent: #d4d4d4;
+}
+
+.darkmode {
+    --bgc: #1e1e1e;
+    --text-color: #e0e5e8;
+    --link-color: #3aafa9;
+    --accent: #464646;
+}
+
+* {
+    font-family: "Maven Pro", sans-serif;
+    font-style: normal;
+}
+
+#headshot {
+    width: 115px; 
+    height: 115px; 
+    /* zoom: 0.075; */
+    object-fit: cover;
+    /* object-position: 45% 2.75%; */
+}
+
+body {
+    background-color: var(--bgc);
+}
+
+#headshotheader {
+    font-size: 50px;
+    margin-top: 10px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Three equal columns */
+    height: 100vh; /* Full height */
+}
+
+.middle-column {
+    grid-column: 2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-column div {
+    margin: 10px;
+    width: 100%; 
+}
+
+h2, ul {
+    margin-left: 0; /* Remove any default margins */
+    color: var(--text-color);
+}
+
+ul {
+    padding-left: 0; /* Remove the default padding */
+    list-style-position: inside; /* Ensure bullet points align with the text */
+    margin-bottom: 0px;
+}
+
+li {
+    margin-left: 0; /* Ensure list items align with the <h2> */
+    color: var(--text-color);
+    font-weight: 75;
+    font-family: "Questrial", sans-serif;
+    letter-spacing: .075rem;
+    font-size: 17px;
+    word-spacing: 0.075rem;
+}
+
+.link {
+    color: var(--link-color);
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "Questrial", sans-serif;
+    font-weight: 75;
+    letter-spacing: .075rem;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h2.title {
+    margin-top: 0px;
+}
+
+.footer {
+    font-size: 17px;
+    font-family: "Questrial", sans-serif;
+    font-weight: 75;
+    letter-spacing: .075rem;
+    color: var(--text-color)
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#theme-switch svg {
+    fill: var(--text-color)
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
