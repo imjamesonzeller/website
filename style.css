@@ -20,9 +20,7 @@
 #headshot {
     width: 115px; 
     height: 115px; 
-    /* zoom: 0.075; */
     object-fit: cover;
-    /* object-position: 45% 2.75%; */
 }
 
 body {
@@ -41,8 +39,8 @@ body {
 body {
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr; /* Three equal columns */
-    height: 100vh; /* Full height */
+    grid-template-columns: 1fr 1.5fr 1fr;
+    height: 100vh;
 }
 
 .middle-column {
@@ -59,13 +57,11 @@ body {
 }
 
 h2, ul {
-    margin-left: 0; /* Remove any default margins */
+    margin-left: 0;
     color: var(--text-color);
 }
 
 ul {
-    /* padding-left: 0;  Remove the default padding */
-    /* list-style-position: inside; Ensure bullet points align with the text */
     list-style-position: outside;
     padding-left: 40px;
     margin-left: -24px;
@@ -73,14 +69,13 @@ ul {
 }
 
 li {
-    margin-left: 0; /* Ensure list items align with the <h2> */
+    margin-left: 0;
     color: var(--text-color);
     font-weight: 75;
     font-family: "Questrial", sans-serif;
     letter-spacing: .075rem;
     font-size: 17px;
     word-spacing: 0.075rem;
-
     padding-left: 4px;
 }
 
