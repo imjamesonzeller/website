@@ -11,7 +11,7 @@ async function sendApiRequest() {
     try {
         const payload = { words: words };
 
-        const apiUrl = 'http://wordsearch.jamesonzeller.com/generate_word_search';
+        const apiUrl = 'https://wordsearch.jamesonzeller.com/generate_word_search';
 
         console.log('Sending request to:', apiUrl);
         console.log('Payload:', payload);
