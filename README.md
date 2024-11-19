@@ -16,7 +16,7 @@ This website showcases my skills, and achievements as a developer and student al
 
 ### Technologies Used:
 - HTML, CSS, and JavaScript.
-- JavaScript was used for all scripts applicable to this project, including the dark and light mode capabilties, the shuffling of text and images, and finally handling the API request to the word search generator. [https://jamesonzeller.com/wordsearch](https://jamesonzeller.com/wordsearch)
+- JavaScript was used for all scripts applicable to this project, including the dark and light mode capabilties, the shuffling of text and images, and finally handling the API request to the [word search generator](https://jamesonzeller.com/wordsearch).
 - Hosted on [Cloudflare Pages](https://pages.cloudflare.com) for fast and reliable deployment
 
 ## Deployment
