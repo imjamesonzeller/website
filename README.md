@@ -31,6 +31,6 @@ The website is deployed through **Cloudflare Pages** for continuous integration 
 
 You can reach me at:
 - Email: [jz@jamesonzeller.com](mailto:jz@jamesonzeller.com)
-- LinkedIn: [https://linkedin.com/in/jamesonzeller](https://linkedin.com/in/jamesonzeller)
+- LinkedIn: [https://linkedin.com/in/jameson-zeller](https://linkedin.com/in/jameson-zeller)
 
 **Thank you for visiting my portfolio website! I look forward to connecting with you.**
