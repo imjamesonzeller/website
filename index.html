@@ -53,6 +53,38 @@
                     <img src="./images/jameson-headshot.jpg" alt="Picture of Jameson" id="headshot">
                 </a>
                 <h1 id="headshotheader">Jameson Anthony Zeller</h1>
+                <p id='current-read'>Loading...</p>
+                <script>
+                    const apiUrl = 'https://api.jamesonzeller.com/get_current_read';
+                
+                    console.log('Sending request to:', apiUrl);
+                
+                    // Wrap the fetch request in an async function
+                    async function getCurrentRead() {
+                        try {
+                            const response = await fetch(apiUrl, {
+                                method: 'GET',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                }
+                            });
+                
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                
+                            const data = await response.json();
+                            console.log('API Response:', data);
+                
+                            document.getElementById('current-read').innerHTML = 'Current Read: ' + data.attrs;
+                        } catch (error) {
+                            console.error('Error fetching data:', error);
+                        }
+                    }
+                
+                    // Call the function to trigger the request
+                    getCurrentRead();
+                </script>
                 <p><a href="https://www.linkedin.com/in/jameson-zeller" class="link" target="_blank">LinkedIn</a> | <a href="https://github.com/imjamesonzeller?tab=repositories" class="link" target="_blank">GitHub</a></p>
         </div>
 
