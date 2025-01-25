@@ -43,6 +43,10 @@ body {
     height: 100vh;
 }
 
+#current-read {
+    font-size: 17px;
+}
+
 .middle-column {
     grid-column: 2; 
     display: flex;
