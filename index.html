@@ -70,6 +70,7 @@
                             });
                 
                             if (!response.ok) {
+                                document.getElementById('current-read').innerHTML = 'Current Read: Tuesdays with Morrie by Mitch Albom';
                                 throw new Error(`HTTP error! Status: ${response.status}`);
                             }
                 
@@ -85,7 +86,7 @@
                     // Call the function to trigger the request
                     getCurrentRead();
                 </script>
-                <p><a href="https://www.linkedin.com/in/jameson-zeller" class="link" target="_blank">LinkedIn</a> | <a href="https://github.com/imjamesonzeller?tab=repositories" class="link" target="_blank">GitHub</a></p>
+                <p><a href="https://www.linkedin.com/in/jameson-zeller" class="link" target="_blank">LinkedIn</a> | <a href="https://github.com/imjamesonzeller" class="link" target="_blank">GitHub</a></p>
         </div>
 
         <div>
@@ -107,7 +108,7 @@
         </div>
 
         <div>
-            <a download="zellerresume" class="link" href="./data/resume.pdf">Download my resume here</a>
+            <a download="zellerresume" class="link" href="./data/UIUC-CS-zeller-resume.pdf">Download my resume here</a>
         </div>
 
         <div>
