@@ -55,36 +55,41 @@
                 <h1 id="headshotheader">Jameson Anthony Zeller</h1>
                 <p id='current-read'>Loading...</p>
                 <script>
-                    const apiUrl = 'https://api.jamesonzeller.com/get_current_read';
-                
-                    console.log('Sending request to:', apiUrl);
-                
-                    // Wrap the fetch request in an async function
-                    async function getCurrentRead() {
+                    (function() {
+                        const apiUrl = 'https://api.jamesonzeller.com/get_current_read';
+                        const targetEl = document.getElementById('current-read');
+
+                        if (!targetEl) return;
+
+                        async function getCurrentRead() {
                         try {
                             const response = await fetch(apiUrl, {
-                                method: 'GET',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                }
+                            method: 'GET',
+                            headers: { 'Content-Type': 'application/json' }
                             });
-                
+
                             if (!response.ok) {
-                                document.getElementById('current-read').innerHTML = 'Current Read: Tuesdays with Morrie by Mitch Albom';
                                 throw new Error(`HTTP error! Status: ${response.status}`);
                             }
-                
+
                             const data = await response.json();
-                            console.log('API Response:', data);
-                
-                            document.getElementById('current-read').innerHTML = 'Current Read: ' + data.attrs;
+                            if (data?.attrs) {
+                                targetEl.textContent = `Current Read: ${data.attrs}`;
+                            } else {
+                                targetEl.textContent = 'Current Read: Tuesdays with Morrie by Mitch Albom';
+                            }
                         } catch (error) {
-                            console.error('Error fetching data:', error);
+                            console.error('Failed to fetch current read:', error);
+                            targetEl.textContent = 'Current Read: Tuesdays with Morrie by Mitch Albom';
                         }
-                    }
-                
-                    // Call the function to trigger the request
-                    getCurrentRead();
+                        }
+
+                        // Prevent double-calling if somehow injected multiple times
+                        if (!window.__currentReadLoaded) {
+                        window.__currentReadLoaded = true;
+                        getCurrentRead();
+                        }
+                    })();
                 </script>
                 <p><a href="https://www.linkedin.com/in/jameson-zeller" class="link" target="_blank">LinkedIn</a> | <a href="https://github.com/imjamesonzeller" class="link" target="_blank">GitHub</a></p>
         </div>
