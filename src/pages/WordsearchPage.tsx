@@ -241,7 +241,7 @@ const WordsearchPage = () => {
               <h3>Mind the delimiter</h3>
               <p>
                 Using commas? Enter <code>,</code> as your delimiter. Need to split on new lines? Use{' '}
-                <code>&bsol;n</code>.
+                <code>\n</code>.
               </p>
             </article>
             <article className="tip-card">
