@@ -40,85 +40,168 @@
     <script type="text/javascript" src="./scripts/imageshuffle.js" defer></script>
 </head>
 <body>
-    <header>
-        <button id="theme-switch">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E8EAED"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E8EAED"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+    <header class="site-header">
+        <a class="brand" href="./index.html">Jameson Zeller</a>
+        <nav class="header-nav">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <button id="theme-switch" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
         </button>
     </header>
 
-    <div class="middle-column">
-        <div class="headshot">
-                <a href="https://www.jamesonzeller.com">
-                    <img src="./images/jameson-headshot.jpg" alt="Picture of Jameson" id="headshot">
-                </a>
-                <h1 id="headshotheader">Jameson Anthony Zeller</h1>
-                <p id='current-read'>Loading...</p>
-                <script>
-                    (function() {
-                        const apiUrl = 'https://api.jamesonzeller.com/get_current_read';
-                        const targetEl = document.getElementById('current-read');
+    <main>
+        <section class="hero" id="about">
+            <div class="hero-copy">
+                <p class="eyebrow">Student · Builder · Teammate</p>
+                <h1>Hi, I’m Jameson Zeller.</h1>
+                <p class="lead">I translate ideas into shippable software and mathematical insight. Based in Champaign, Illinois, I’m currently studying Computer Science and Mathematics while building tools that help teams move faster.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="mailto:jz@jamesonzeller.com">Let’s collaborate</a>
+                    <a class="btn secondary" download="UIUC-CS-zeller-resume" href="./data/UIUC-CS-zeller-resume.pdf">Download resume</a>
+                </div>
+                <ul class="hero-meta">
+                    <li><span class="meta-label">Focus:</span> Systems integration, product engineering, and data-driven tooling.</li>
+                    <li><span class="meta-label">Currently reading:</span> <span id="current-read">Loading...</span></li>
+                    <li><span class="meta-label">When I log off:</span> I’m usually <span id="words">hiking</span>.</li>
+                </ul>
+                <div class="link-row">
+                    <a class="inline-link" href="https://www.linkedin.com/in/jameson-zeller" target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="inline-link" href="https://github.com/imjamesonzeller" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="portrait-frame">
+                    <img src="./images/jameson-headshot.jpg" alt="Portrait of Jameson Zeller" id="headshot">
+                </div>
+            </div>
+        </section>
 
-                        if (!targetEl) return;
+        <section class="feature-band">
+            <div class="feature-card">
+                <h2>What I’m great at</h2>
+                <p>Designing humane, highly responsive software experiences with strong attention to polish.</p>
+            </div>
+            <div class="feature-card">
+                <h2>How I work</h2>
+                <p>Collaborative, curious, and relentlessly iterative—shaping rough concepts into production-ready tools.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Where I thrive</h2>
+                <p>End-to-end projects that blend backend systems, APIs, and front-end craft to solve real workflows.</p>
+            </div>
+        </section>
 
-                        async function getCurrentRead() {
-                        try {
-                            const response = await fetch(apiUrl, {
-                            method: 'GET',
-                            headers: { 'Content-Type': 'application/json' }
-                            });
+        <section class="projects" id="projects">
+            <div class="section-heading">
+                <h2>Recent Projects</h2>
+                <p class="section-subtitle">A sampling of the products and experiments I’m excited about right now.</p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-type">macOS App</p>
+                    <h3>Tasklight</h3>
+                    <p>Lightning-fast task capture into Notion with a Spotlight-style command window, OAuth, and secure local storage.</p>
+                    <ul class="project-tags">
+                        <li>Go</li>
+                        <li>Wails v3</li>
+                        <li>React</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a class="btn secondary small" href="./tasklight.html">Explore the page</a>
+                        <a class="inline-link" href="https://github.com/imjamesonzeller/tasklight-v3" target="_blank" rel="noopener">View source ↗</a>
+                    </div>
+                </article>
 
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! Status: ${response.status}`);
-                            }
+                <article class="project-card">
+                    <p class="project-type">Web App</p>
+                    <h3>Word Search Generator</h3>
+                    <p>API-backed puzzle builder that turns custom term lists into printable word searches in seconds.</p>
+                    <ul class="project-tags">
+                        <li>TypeScript</li>
+                        <li>API Design</li>
+                        <li>UI Engineering</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a class="btn secondary small" href="./wordsearch.html">Try it live</a>
+                        <a class="inline-link" href="https://github.com/imjamesonzeller" target="_blank" rel="noopener">More projects ↗</a>
+                    </div>
+                </article>
 
-                            const data = await response.json();
-                            if (data?.attrs) {
-                                targetEl.textContent = `Current Read: ${data.attrs}`;
-                            } else {
-                                targetEl.textContent = 'Current Read: Tuesdays with Morrie by Mitch Albom';
-                            }
-                        } catch (error) {
-                            console.error('Failed to fetch current read:', error);
-                            targetEl.textContent = 'Current Read: Tuesdays with Morrie by Mitch Albom';
-                        }
-                        }
+                <article class="project-card">
+                    <p class="project-type">Platform</p>
+                    <h3>jamesonzeller.com</h3>
+                    <p>The hub for my work—custom-built with reusable components, dark mode, and API-driven content.</p>
+                    <ul class="project-tags">
+                        <li>HTML/CSS</li>
+                        <li>TypeScript</li>
+                        <li>Cloudflare Pages</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a class="btn secondary small" href="https://github.com/imjamesonzeller/website" target="_blank" rel="noopener">See the repo</a>
+                        <a class="inline-link" href="https://github.com/imjamesonzeller?tab=repositories" target="_blank" rel="noopener">Browse GitHub ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-                        // Prevent double-calling if somehow injected multiple times
-                        if (!window.__currentReadLoaded) {
-                        window.__currentReadLoaded = true;
-                        getCurrentRead();
-                        }
-                    })();
-                </script>
-                <p><a href="https://www.linkedin.com/in/jameson-zeller" class="link" target="_blank">LinkedIn</a> | <a href="https://github.com/imjamesonzeller" class="link" target="_blank">GitHub</a></p>
+        <section class="callout">
+            <h2>Let’s build something useful together.</h2>
+            <p>I love partnering with teams to streamline workflows, explore applied AI, and deliver delightful product moments.</p>
+            <div class="callout-actions">
+                <a class="btn primary" href="mailto:jz@jamesonzeller.com">Start a conversation</a>
+                <a class="btn secondary" href="https://cal.com/jameson-zeller" target="_blank" rel="noopener">Book a time</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="footer-links">
+            <a class="inline-link" href="mailto:jz@jamesonzeller.com">jz@jamesonzeller.com</a>
+            <a class="inline-link" href="https://www.linkedin.com/in/jameson-zeller" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="inline-link" href="https://github.com/imjamesonzeller" target="_blank" rel="noopener">GitHub</a>
         </div>
+        <p>© Jameson Anthony Zeller. Built with care in Champaign, IL.</p>
+    </footer>
 
-        <div>
-            <h2 class="title">Who I am</h2>
-            <ul>
-                <li>Student of Computer Science & Mathematics</li>
-                <li>Based out of Champaign, Illinois, USA</li>
-                <li>Love <span id="words">Hiking</span></li>
-            </ul>
-        </div>
+    <script>
+        (function() {
+            const apiUrl = 'https://api.jamesonzeller.com/get_current_read';
+            const targetEl = document.getElementById('current-read');
 
-        <div>
-            <h2 class="title">What I do</h2>
-            <ul>
-                <li>Develop Programs & Web Applications</li>
-                <li>Build APIs & Integrate Systems</li>
-                <li>Analyze Data & Create Algorithms</li>
-            </ul>
-        </div>
+            if (!targetEl) return;
 
-        <div>
-            <a download="UIUC-CS-zeller-resume" class="link" href="./data/UIUC-CS-zeller-resume.pdf">Download my resume here</a>
-        </div>
+            async function getCurrentRead() {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'GET',
+                        headers: { 'Content-Type': 'application/json' }
+                    });
 
-        <div>
-            <p class="footer">© Jameson Anthony Zeller | <a class="link" href="mailto:jz@jamesonzeller.com">jz@jamesonzeller.com</a></p>
-        </div>
-    </div>
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    if (data?.attrs) {
+                        targetEl.textContent = data.attrs;
+                    } else {
+                        targetEl.textContent = 'Tuesdays with Morrie by Mitch Albom';
+                    }
+                } catch (error) {
+                    console.error('Failed to fetch current read:', error);
+                    targetEl.textContent = 'Tuesdays with Morrie by Mitch Albom';
+                }
+            }
+
+            if (!window.__currentReadLoaded) {
+                window.__currentReadLoaded = true;
+                getCurrentRead();
+            }
+        })();
+    </script>
 </body>
 </html>
