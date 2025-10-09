@@ -1,0 +1,66 @@
+[
+  {
+    "id": "tasklight",
+    "type": "macOS App",
+    "title": "Tasklight",
+    "description": "Lightning-fast task capture into Notion with a Spotlight-style command window, OAuth, and secure local storage.",
+    "tags": ["Go", "Wails v3", "React"],
+    "actions": [
+      {
+        "label": "Explore the page",
+        "href": "/tasklight",
+        "kind": "button",
+        "variant": "secondary"
+      },
+      {
+        "label": "View source ↗",
+        "href": "https://github.com/imjamesonzeller/tasklight-v3",
+        "kind": "link",
+        "external": true
+      }
+    ]
+  },
+  {
+    "id": "wordsearch",
+    "type": "Web App",
+    "title": "Word Search Generator",
+    "description": "API-backed puzzle builder that turns custom term lists into printable word searches in seconds.",
+    "tags": ["TypeScript", "API Design", "UI Engineering"],
+    "actions": [
+      {
+        "label": "Try it live",
+        "href": "/wordsearch",
+        "kind": "button",
+        "variant": "secondary"
+      },
+      {
+        "label": "More projects ↗",
+        "href": "https://github.com/imjamesonzeller",
+        "kind": "link",
+        "external": true
+      }
+    ]
+  },
+  {
+    "id": "website",
+    "type": "Platform",
+    "title": "jamesonzeller.com",
+    "description": "The hub for my work—custom-built with reusable components, dark mode, and API-driven content.",
+    "tags": ["React", "TypeScript", "Cloudflare Pages"],
+    "actions": [
+      {
+        "label": "See the repo ↗",
+        "href": "https://github.com/imjamesonzeller/website",
+        "kind": "button",
+        "variant": "secondary",
+        "external": true
+      },
+      {
+        "label": "Browse GitHub ↗",
+        "href": "https://github.com/imjamesonzeller?tab=repositories",
+        "kind": "link",
+        "external": true
+      }
+    ]
+  }
+]

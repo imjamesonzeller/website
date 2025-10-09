@@ -1,1 +1,33 @@
+# dependencies
 node_modules
+
+# production builds
+dist
+dist-ssr
+
+# cache directories
+.vite
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# editor artifacts
+.DS_Store
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# typescript build info
+*.tsbuildinfo
