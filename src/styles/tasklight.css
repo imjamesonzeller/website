@@ -107,7 +107,7 @@ a:focus-visible {
 main {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px clamp(18px, 5vw, 60px) 120px;
+  padding: 40px clamp(18px, 5vw, 60px) 0px;
 }
 
 section {
