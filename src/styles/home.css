@@ -250,6 +250,15 @@ section {
     color: var(--link-color);
 }
 
+.fade-element {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.fade-element.is-visible {
+    opacity: 1;
+}
+
 .hero-visual {
     display: flex;
     justify-content: center;

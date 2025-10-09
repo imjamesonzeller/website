@@ -1,36 +1,23 @@
-# Jameson Zeller's Portfolio Website
+## Jameson Zeller — Portfolio
 
-Welcome to the repository for my personal portfolio website!
+Personal site showcasing my work, projects, and Tasklight resources. Built with React, TypeScript, and Vite with modular components, shared styling, and typed data models.
 
-This website showcases my skills, and achievements as a developer and student along with my person interests. It serves as a professional online presence and a place for visitors to learn more about my work.
+### Highlights
+- Dark/light theme toggle powered by a context that syncs with user preferences.
+- Hero animations (headshot + “When I log off” text) handled through custom React hooks.
+- Project cards sourced from JSON and rendered via typed components.
+- Tasklight and Word Search pages preserve their detailed copy, video embeds, and download links.
+- Word Search generator calls the public API with improved validation, responsive statuses, and a styled CSV download.
 
-**Website URL** [https://jamesonzeller.com](https://jamesonzeller.com)
+### Scripts
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
 
-## About This Project
-
-### Key Features:
-
-- **Responsive design**: The website adapts to different screen sizes, making it accessible on desktop and mobile devices.
-- **About Me Section**: A brief overview of my background, skills, and professional experience.
-- **Contact Information**: Access to my resume, LinkedIn and GitHub
-
-### Technologies Used:
-- HTML, CSS, and JavaScript.
-- JavaScript was used for all scripts applicable to this project, including the dark and light mode capabilties, the shuffling of text and images, and finally handling the API request to the [word search generator](https://jamesonzeller.com/wordsearch).
-- Hosted on [Cloudflare Pages](https://pages.cloudflare.com) for fast and reliable deployment
-
-## Deployment
-
-The website is deployed through **Cloudflare Pages** for continuous integration and deployment (CI/CD). Cloudflare Pages allows me to push updates to the website directly from GitHub with automatic deployment. Here's a brief overview of the deployment process:
-
-1. **GitHub Repository**: This repository is connected to Cloudflare Pages.
-2. **Automatic Deployment**: Every push to the `main` branch triggers a deployment process.
-3. **Custom Domain**: The website is hosted at [jamesonzeller.com](https://jamesonzeller.com), which is set up through Cloudflare.
-
-## Contact
-
-You can reach me at:
-- Email: [jz@jamesonzeller.com](mailto:jz@jamesonzeller.com)
-- LinkedIn: [https://linkedin.com/in/jameson-zeller](https://linkedin.com/in/jameson-zeller)
-
-**Thank you for visiting my portfolio website! I look forward to connecting with you.**
+### Next Ideas
+1. Hook up automated tests for the rotating-content and current-read hooks.
+2. Explore MDX or a lightweight CMS for editing page copy without code changes.
