@@ -75,7 +75,7 @@ const TasklightPage = () => {
           </div>
           <div className="video-frame">
             <iframe
-              src="https://www.youtube.com/embed/O9q4PnzKJlg"
+              src="https://www.youtube.com/embed/0FS4a6uXHdc"
               title="Tasklight Walkthrough"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
