@@ -16,8 +16,7 @@ export function useCurrentRead() {
       try {
         setIsLoading(true);
         const response = await fetch(API_ENDPOINT, {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' }
+          method: 'GET'
         });
 
         if (!response.ok) {
@@ -26,7 +25,8 @@ export function useCurrentRead() {
 
         const data: CurrentReadResponse = await response.json();
         if (isMounted) {
-          setTitle(data?.attrs ?? FALLBACK_TITLE);
+          const resolvedTitle = data?.currentRead ?? data?.attrs ?? FALLBACK_TITLE;
+          setTitle(resolvedTitle);
           setError(null);
         }
       } catch (err) {
