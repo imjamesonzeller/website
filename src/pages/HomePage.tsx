@@ -148,7 +148,7 @@ const HomePage = () => {
             </a>
             <a
               className="btn secondary"
-              href="https://cal.com/jameson-zeller"
+              href="https://cal.com/jamesonzeller"
               target="_blank"
               rel="noopener noreferrer"
             >
