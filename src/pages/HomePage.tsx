@@ -165,7 +165,7 @@ const HomePage = () => {
           </a>
           <a
             className="inline-link"
-            href="https://www.linkedin.com/in/jamesonzeller"
+            href="https://www.linkedin.com/in/jameson-zeller"
             target="_blank"
             rel="noopener noreferrer"
           >
