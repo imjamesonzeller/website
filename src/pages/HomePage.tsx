@@ -45,9 +45,8 @@ const HomePage = () => {
             <p className="eyebrow">Student · Builder · Teammate</p>
             <h1>Hi, I&apos;m Jameson Zeller.</h1>
             <p className="lead">
-              I translate ideas into shippable software and mathematical insight. Based in Champaign,
-              Illinois, I&apos;m currently studying Computer Science and Mathematics while building
-              tools that help teams move faster.
+              I&apos;m a CS and Math student at UIUC who likes building things that people use.
+              Based in Champaign, working on tools that make people&apos;s work easier.
             </p>
             <div className="hero-actions">
               <a className="btn primary" href="mailto:jz@jamesonzeller.com">
@@ -64,8 +63,8 @@ const HomePage = () => {
             </div>
             <ul className="hero-meta">
               <li>
-                <span className="meta-label">Focus:</span> Systems integration, product engineering,
-                and data-driven tooling.
+                <span className="meta-label">Focus:</span> Full-stack development, APIs, and connecting
+                the pieces.
               </li>
               <li>
                 <span className="meta-label">Currently reading:</span> {currentRead}
