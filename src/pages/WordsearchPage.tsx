@@ -1,6 +1,7 @@
 import { FormEvent, useMemo, useState } from 'react';
 import SiteHeader from '../components/SiteHeader';
 import { WordSearchPayload, WordSearchResponse } from '../types/api';
+import { apiFetch } from '../utils/api';
 import '../styles/wordsearch.css';
 
 const navItems = [
@@ -8,8 +9,6 @@ const navItems = [
   { label: 'Tips', href: '#tips' },
   { label: 'Support', href: '#support' }
 ];
-
-const API_ENDPOINT = 'https://api.jamesonzeller.com/generate_word_search';
 const SAMPLE_GRID_LINES = ['S R C H S W O R D', 'A O P U Z Z L E R', 'R L E A R N I N G', 'E V A D E C O D E'];
 
 function buildCsv(grid: string[][] | undefined, words: string[] | undefined) {
@@ -65,17 +64,12 @@ const WordsearchPage = () => {
 
     try {
       const payload: WordSearchPayload = { words };
-      const response = await fetch(API_ENDPOINT, {
+      const data = await apiFetch<WordSearchResponse>({
+        endpoint: '/generate_word_search',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-
-      if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
-      }
-
-      const data: WordSearchResponse = await response.json();
 
       const newGridLines = data.search?.map((row) => row.join(' ')) ?? [];
       setGridLines(newGridLines);

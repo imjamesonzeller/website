@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { CurrentReadResponse } from '../types/api';
+import { apiFetch } from '../utils/api';
 
-const API_ENDPOINT = 'https://api.jamesonzeller.com/get_current_read';
 const FALLBACK_TITLE = 'Tuesdays with Morrie by Mitch Albom';
 
 export function useCurrentRead() {
@@ -15,15 +15,11 @@ export function useCurrentRead() {
     async function fetchCurrentRead() {
       try {
         setIsLoading(true);
-        const response = await fetch(API_ENDPOINT, {
+        const data = await apiFetch<CurrentReadResponse>({
+          endpoint: '/get_current_read',
           method: 'GET'
         });
 
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-
-        const data: CurrentReadResponse = await response.json();
         if (isMounted) {
           const resolvedTitle = data?.currentRead ?? data?.attrs ?? FALLBACK_TITLE;
           setTitle(resolvedTitle);

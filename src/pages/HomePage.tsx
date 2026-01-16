@@ -53,7 +53,12 @@ const HomePage = () => {
               <a className="btn primary" href="mailto:jz@jamesonzeller.com">
                 Let&apos;s collaborate
               </a>
-              <a className="btn secondary" download href="/data/UIUC-CS-zeller-resume.pdf">
+              <a
+                className="btn secondary"
+                href="https://github.com/imjamesonzeller/resume-repo/releases/latest/download/UIUC-CS-zeller-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download resume
               </a>
             </div>
