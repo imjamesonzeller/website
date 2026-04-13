@@ -464,3 +464,143 @@ section {
         align-items: center;
     }
 }
+
+/* Experience Section */
+.experience {
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.experience-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+}
+
+.experience-subsection {
+    display: flex;
+    flex-direction: column;
+}
+
+.subsection-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 24px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    bottom: -40px;
+    width: 2px;
+    background-color: var(--accent);
+}
+
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--link-color);
+    flex-shrink: 0;
+    position: relative;
+    top: 0;
+}
+
+.timeline-content {
+    padding-top: 4px;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.timeline-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.timeline-date {
+    font-size: 13px;
+    color: var(--muted-text);
+    font-family: "Questrial", sans-serif;
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
+}
+
+.timeline-school,
+.timeline-company {
+    font-size: 14px;
+    color: var(--muted-text);
+    margin: 0;
+    font-weight: 500;
+}
+
+.timeline-minor {
+    font-size: 13px;
+    color: var(--muted-text);
+    margin: 4px 0 0 0;
+    font-style: italic;
+}
+
+.timeline-location {
+    font-size: 13px;
+    color: var(--muted-text);
+    margin: 0;
+}
+
+.timeline-details {
+    font-size: 13px;
+    color: var(--muted-text);
+    margin: 8px 0 0 0;
+}
+
+.experience-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+}
+
+.experience-highlights li {
+    font-size: 13px;
+    color: var(--muted-text);
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.experience-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--link-color);
+}
+
+@media (max-width: 1024px) {
+    .experience-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

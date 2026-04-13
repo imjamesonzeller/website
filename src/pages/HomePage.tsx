@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import SiteHeader from '../components/SiteHeader';
 import ProjectCard from '../components/ProjectCard';
+import ExperienceSection from '../components/ExperienceSection';
 import { useCurrentRead } from '../hooks/useCurrentRead';
 import { useRotatingContent } from '../hooks/useRotatingContent';
 import projectsRaw from '../data/projects.json';
@@ -11,13 +12,65 @@ import '../styles/home.css';
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' }
 ];
 
 const projects = projectsRaw as Project[];
 const words = (wordsRaw as string[]).length > 0 ? (wordsRaw as string[]) : ['hiking'];
 const images = (imagesRaw as string[]).length > 0 ? (imagesRaw as string[]) : ['/images/jameson-headshot.jpg'];
+
+const education = [
+  {
+    school: 'University of Illinois at Urbana-Champaign',
+    degree: 'Bachelor of Science in Mathematics & Computer Science',
+    minor: 'Minor in Business',
+    startDate: 'Aug. 2024',
+    endDate: 'May 2028',
+    location: 'Champaign, Illinois',
+    details: '3.87 GPA • Elsie Thomas Fraser Award Winner • Dean\'s List'
+  },
+  {
+    school: 'Grant Community High School',
+    degree: 'High School Diploma',
+    startDate: 'Graduated',
+    endDate: '2024',
+    location: 'Fox Lake, Illinois',
+    details: '4.55 GPA • Baseball Team Captain • Math Team Oralist'
+  }
+];
+
+const workExperience = [
+  {
+    company: 'Hudl',
+    role: 'Software Engineering Intern',
+    startDate: 'May 2026',
+    endDate: 'Aug. 2026',
+    location: 'Lincoln, NE',
+    highlights: ['Working with C#, .NET, and React']
+  },
+  {
+    company: 'AthXcel (acquired by Optima Sports Group)',
+    role: 'Product Manager',
+    startDate: 'May 2025',
+    endDate: 'Present',
+    location: 'Remote / Round Lake, IL',
+    highlights: [
+      'Architected and deployed "Coach Eddie" AI Chat system with C# .NET backend and TypeScript React frontend',
+      'Designed and implemented tool call handler and registry framework for type-safe function routing with OpenAI',
+      'Engineered full-stack solution with SQL Server schemas, conversation management, and Azure deployment',
+      'Led cross-company integration efforts post-acquisition, coordinating engineering teams'
+    ]
+  },
+  {
+    company: 'Siebel School of Computing and Data Science',
+    role: 'CS 124 Tutor (Java / Kotlin)',
+    startDate: 'Jan. 2025',
+    endDate: 'Dec. 2025',
+    location: 'Champaign, IL',
+    highlights: ['Mentored students in UIUC\'s CS 124 programming course, simplifying complex design and debugging concepts']
+  }
+];
 
 const HomePage = () => {
   const { title: currentRead } = useCurrentRead();
@@ -50,7 +103,7 @@ const HomePage = () => {
             </p>
             <div className="hero-actions">
               <a className="btn primary" href="mailto:jz@jamesonzeller.com">
-                Let&apos;s collaborate
+                Get in touch
               </a>
               <a
                 className="btn secondary"
@@ -126,6 +179,8 @@ const HomePage = () => {
           </div>
         </section>
 
+        <ExperienceSection education={education} experience={workExperience} />
+
         <section className="projects" id="projects">
           <div className="section-heading">
             <h2>Recent Projects</h2>
@@ -137,27 +192,6 @@ const HomePage = () => {
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
-          </div>
-        </section>
-
-        <section className="callout">
-          <h2>Let&apos;s build something useful together.</h2>
-          <p>
-            I love partnering with teams to streamline workflows, explore applied AI, and deliver
-            delightful product moments.
-          </p>
-          <div className="callout-actions">
-            <a className="btn primary" href="mailto:jz@jamesonzeller.com">
-              Start a conversation
-            </a>
-            <a
-              className="btn secondary"
-              href="https://cal.com/jamesonzeller"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a time
-            </a>
           </div>
         </section>
       </main>

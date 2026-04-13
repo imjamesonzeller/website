@@ -249,35 +249,49 @@ const WordsearchPage = () => {
         </section>
 
         <section className="support" id="support">
-          <h2>Need a custom integration?</h2>
+          <h2>Found an error?</h2>
           <p>
-            Reach out if you want to embed this generator elsewhere, hook it into classroom tooling, or
-            extend the API.
+            Spot a bug or have feedback? Let me know—I'd love to hear from you.
           </p>
           <div className="support-actions">
-            <a className="btn primary" href="mailto:jz@jamesonzeller.com">
-              Contact me
+            <a className="btn secondary" href="mailto:jz@jamesonzeller.com">
+              Send feedback
             </a>
             <a
               className="btn secondary"
-              href="https://cal.com/jamesonzeller"
+              href="https://github.com/imjamesonzeller/api"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Schedule a chat
+              View on GitHub
             </a>
           </div>
         </section>
       </main>
 
-      <footer className="footer">
-        <p>
-          © Jameson Anthony Zeller. Explore more projects at{' '}
-          <a className="inline-link" href="https://www.jamesonzeller.com">
-            jamesonzeller.com
+      <footer className="footer" id="contact">
+        <div className="footer-links">
+          <a className="inline-link" href="mailto:jz@jamesonzeller.com">
+            jz@jamesonzeller.com
           </a>
-          .
-        </p>
+          <a
+            className="inline-link"
+            href="https://www.linkedin.com/in/jameson-zeller"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            className="inline-link"
+            href="https://github.com/imjamesonzeller"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+        <p>© Jameson Anthony Zeller. Built with care in Champaign, IL.</p>
       </footer>
     </>
   );

@@ -39,7 +39,7 @@ const TasklightPage = () => {
                 View on GitHub
               </a>
             </div>
-            <p className="disclaimer">Signed universal build for macOS 12+ · Apple Silicon & Intel</p>
+            <p className="disclaimer">Universal build for macOS 12+ · Apple Silicon & Intel</p>
           </div>
           <div className="hero-highlights">
             <div className="highlight">
@@ -60,9 +60,10 @@ const TasklightPage = () => {
         <section className="notice">
           <h2>AI Parsing Status</h2>
           <p>
-            Tasklight&apos;s AI-powered natural language parsing is temporarily paused while the new Bring
-            Your Own Key system is finalized. You can still capture tasks instantly&mdash;AI support will
-            return in an upcoming update.
+            Tasklight supports Bring Your Own Key (BYOK) for AI-powered natural language parsing&mdash;bring
+            your OpenAI API key and parsing will work reliably. Parsing through shared server quotas is
+            currently not stable and shouldn&apos;t be relied upon. You can still capture tasks instantly
+            without AI support.
           </p>
         </section>
 
@@ -215,17 +216,29 @@ const TasklightPage = () => {
         </section>
       </main>
 
-      <footer className="footer">
-        <p>
-          Built by Jameson Zeller ·{' '}
+      <footer className="footer" id="contact">
+        <div className="footer-links">
+          <a className="inline-link" href="mailto:jz@jamesonzeller.com">
+            jz@jamesonzeller.com
+          </a>
           <a
-            href="https://github.com/imjamesonzeller/tasklight-v3"
+            className="inline-link"
+            href="https://www.linkedin.com/in/jameson-zeller"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Source on GitHub
+            LinkedIn
           </a>
-        </p>
+          <a
+            className="inline-link"
+            href="https://github.com/imjamesonzeller"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+        <p>© Jameson Anthony Zeller. Built with care in Champaign, IL.</p>
       </footer>
     </>
   );
